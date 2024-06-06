@@ -1,11 +1,11 @@
 import express from "express";
 import { authenticate } from "./middlewares/autenticate";
-import { createUserController } from "./useCases/CreateUser";
-import { loginUserController } from "./useCases/LoginUser";
-import { logoutUserController } from "./useCases/LogoutUser";
-import { updateUserController } from "./useCases/UpdateUser";
-import { deleteUserController } from "./useCases/DeleteUser";
-import { listUsersController } from "./useCases/ListUsers";
+import { createUserController } from "./useCases/User/CreateUser";
+import { loginUserController } from "./useCases/User/LoginUser";
+import { logoutUserController } from "./useCases/User/LogoutUser";
+import { updateUserController } from "./useCases/User/UpdateUser";
+import { deleteUserController } from "./useCases/User/DeleteUser";
+import { listUsersController } from "./useCases/User/ListUsers";
 
 const router = express.Router();
 

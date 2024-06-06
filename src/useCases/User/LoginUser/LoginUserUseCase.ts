@@ -1,7 +1,7 @@
-import { IUsersRepository } from "../../repositories/IUsersRespository";
+import { IUsersRepository } from "../../../repositories/IUsersRespository";
 import { ILoginUserRequestDTO } from "./LoginUserDTO";
-import { Utils } from "../../Utils/Utils";
-import { config } from "../../config";
+import { Utils } from "../../../Utils/Utils";
+import { config } from "../../../config";
 import jwt from "jsonwebtoken";
 
 export class LoginUserUseCase {

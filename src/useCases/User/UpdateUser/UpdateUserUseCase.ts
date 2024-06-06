@@ -1,8 +1,8 @@
-import { User } from "../../entities/User";
+import { User } from "../../../entities/User";
 import { IUpdateUserRequestDTO } from "./UpdateUserDTO";
-import { UserValidation } from "../../Validation/UserValidation";
-import { IUsersRepository } from "../../repositories/IUsersRespository";
-import { Utils } from "../../Utils/Utils";
+import { UserValidation } from "../../../Validation/UserValidation";
+import { IUsersRepository } from "../../../repositories/IUsersRespository";
+import { Utils } from "../../../Utils/Utils";
 
 export class UpdateUserUseCase {
   constructor(private usersRepositories: IUsersRepository) {}

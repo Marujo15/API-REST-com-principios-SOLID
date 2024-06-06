@@ -1,4 +1,4 @@
-import { IUsersRepository } from "../../repositories/IUsersRespository";
+import { IUsersRepository } from "../../../repositories/IUsersRespository";
 
 export class ListUserUseCase {
     public constructor(

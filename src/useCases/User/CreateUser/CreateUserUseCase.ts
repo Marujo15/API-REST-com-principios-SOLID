@@ -1,7 +1,7 @@
-import { Utils } from "../../Utils/Utils";
-import { UserValidation } from "../../Validation/UserValidation";
-import { User } from "../../entities/User";
-import { IUsersRepository } from "../../repositories/IUsersRespository";
+import { Utils } from "../../../Utils/Utils";
+import { UserValidation } from "../../../Validation/UserValidation";
+import { User } from "../../../entities/User";
+import { IUsersRepository } from "../../../repositories/IUsersRespository";
 import { ICreateUserRequestDTO } from "./CreateUserDTO";
 
 export class CreateUserUseCase {
@@ -30,6 +30,10 @@ export class CreateUserUseCase {
 
     await this.usersRepositories.save(user);
 
-    return user.id;
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email
+    };
   }
 }
