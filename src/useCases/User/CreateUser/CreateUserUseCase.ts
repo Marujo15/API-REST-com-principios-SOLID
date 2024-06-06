@@ -1,4 +1,4 @@
-import { Utils } from "../../../Utils/Utils";
+import { hashPassword } from "../../../Utils/hashPassword";
 import { UserValidation } from "../../../Validation/UserValidation";
 import { User } from "../../../entities/User";
 import { IUsersRepository } from "../../../repositories/IUsersRespository";
@@ -20,7 +20,7 @@ export class CreateUserUseCase {
       throw new Error("The user already exists.");
     }
 
-    const hashedPassword: string = await Utils.hashPassword(data.password);
+    const hashedPassword: string = await hashPassword(data.password);
 
     const user = new User({
       name: data.name,

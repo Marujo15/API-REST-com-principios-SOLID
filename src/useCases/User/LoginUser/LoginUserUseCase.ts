@@ -1,6 +1,6 @@
 import { IUsersRepository } from "../../../repositories/IUsersRespository";
 import { ILoginUserRequestDTO } from "./LoginUserDTO";
-import { Utils } from "../../../Utils/Utils";
+import { comparePassword } from "../../../Utils/comparePassword";
 import { config } from "../../../config";
 import jwt from "jsonwebtoken";
 
@@ -14,7 +14,7 @@ export class LoginUserUseCase {
       throw new Error(`The user doesn't exist.`);
     }
 
-    const matchPasswords = await Utils.comparePassword(
+    const matchPasswords = await comparePassword(
       data.password,
       UserInDB.password
     );

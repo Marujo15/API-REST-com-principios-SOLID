@@ -2,8 +2,7 @@ import { User } from "../../../entities/User";
 import { IUpdateUserRequestDTO } from "./UpdateUserDTO";
 import { UserValidation } from "../../../Validation/UserValidation";
 import { IUsersRepository } from "../../../repositories/IUsersRespository";
-import { Utils } from "../../../Utils/Utils";
-
+import { hashPassword } from "../../../Utils/hashPassword"; 
 export class UpdateUserUseCase {
   constructor(private usersRepositories: IUsersRepository) {}
 
@@ -20,7 +19,7 @@ export class UpdateUserUseCase {
     UserValidation.emailCheck(email);
     UserValidation.passwordCheck(password);
 
-    password = await Utils.hashPassword(password)
+    password = await hashPassword(password)
 
     const updatedUser: Partial<User> = {
       name,
